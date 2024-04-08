@@ -1,13 +1,16 @@
 # Install Timeshift and create a backup
-git clone `this repo`
+
+`sudo pacman -S timeshift`
+
+`git clone [this repo](https://github.com/Rsr45/dotfiles.git)`
 
 cd /home/USER/dotfiles/
 
-chmod +x xxx.sh
+chmod +x ./snapshot.sh
 
-./xxx.sh
+./snapshot.sh
 
-
+### Now install the packages
 ```
 sudo pacman -S neovim vim nano mousepad
 
