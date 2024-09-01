@@ -76,15 +76,8 @@ alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 #
-# Created by `pipx` on 2024-03-19 17:17:35
-export PATH="$PATH:/home/vahlok/.local/bin"
-
-export PATH=$PATH:/home/vahlok/.spicetify
-
-#
 # Personal Wine and Winetricks paths Environment Variables for Protontricks
 export WINE="/usr/bin/wine"
 export WINETRICKS="/usr/bin/winetricks"
-
 
 eval "$(zoxide init zsh)"
