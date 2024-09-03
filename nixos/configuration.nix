@@ -1,0 +1,31 @@
+  environment.systemPackages = [
+    pkgs.neovim
+    pkgs.rar
+    pkgs.zip
+    pkgs.p7zip
+    pkgs.xarchiver
+    pkgs.xfce.thunar
+    pkgs.xfce.thunar-volman
+    pkgs.xfce.thunar-archive-plugin
+    pkgs.lf
+    pkgs.superfile
+    pkgs.feh
+    pkgs.mpv
+    pkgs.mpvc
+    pkgs.palemoon-bin
+    pkgs.floorp
+    pkgs.librewolf
+    pkgs.tor
+    pkgs.mpd
+    pkgs.mpc-cli
+    pkgs.ncmpcpp
+    pkgs.plattenalbum
+    # pkgs.ymuse
+    pkgs.qbittorrent
+    pkgs.logmein-hamachi
+    pkgs.haguichi
+    pkgs.anydesk
+    pkgs.smassh
+    pkgs.typioca
+    pkgs.mapscii
+  ];

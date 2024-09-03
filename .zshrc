@@ -1,10 +1,10 @@
 #-----------------------------------------------------
-#            _              
-#    _______| |__  _ __ ___ 
+#            _
+#    _______| |__  _ __ ___
 #   |_  / __| '_ \| '__/ __|
-#  _ / /\__ \ | | | | | (__ 
+#  _ / /\__ \ | | | | | (__
 # (_)___|___/_| |_|_|  \___|
-#                           
+#
 #-----------------------------------------------------
 # ~/.zshrc
 #-----------------------------------------------------
@@ -74,10 +74,18 @@ alias rw='~/dotfiles/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+alias csgo='/home/$USER/.steam/steam/steamapps/common/SteamLinuxRuntime/run-in-scout-on-soldier -- "/home/$USER/.steam/steam/steamapps/common/Counter-Strike Global Offensive/csgo.sh" "-steam" "-fullscreen" "-freq 144" "-novid" "-console" "-tickrate 128" "-threads 17" "+fps_max 0" "+cl_interp_ratio 2" "+rate 786432"'
+
+#
+# Created by `pipx` on 2024-03-19 17:17:35
+export PATH="$PATH:/home/vahlok/.local/bin"
+
+export PATH=$PATH:/home/vahlok/.spicetify
 
 #
 # Personal Wine and Winetricks paths Environment Variables for Protontricks
 export WINE="/usr/bin/wine"
 export WINETRICKS="/usr/bin/winetricks"
+
 
 eval "$(zoxide init zsh)"
