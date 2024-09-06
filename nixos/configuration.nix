@@ -8,12 +8,16 @@
   hardware.opengl.driSupport32Bit = true;
 
   services.xserver.displayManager.lightdm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "fangyuan"
+
+  # Auto login
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "fangyuan";
+
+  gtk.enable = true;
 
   qt.enable = true;
-  qt.platformTheme = "gtk2";
-  qt.style = "gtk2";
+  #qt.platformTheme = "gtk";
+  #qt.style = "gtk";
 
   programs.sway = {
     enable = true;
@@ -59,35 +63,25 @@
     # jack.enable = true;
   };
 
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/home/fangyuan/Music/";
-    extraConfig = ''
-      audio_output {
-        type "pipewire"
-        name "My Pipewire Output"
-      }
-    '';
-
-    # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
-    network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-  };
-
-  services.mpd.user = "userRunningPipeWire";
-  systemd.services.mpd.environment = {
-      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-      XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.userRunningPipeWire.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
-  };
-
   environment.systemPackages = [
     pkgs.polkit
     pkgs.polkit_gnome
+    pkgs.zsh
+    pkgs.fish
     pkgs.ffmpegthumbnailer # Video files
     pkgs.pavucontrol
     pkgs.neovim
+    pkgs.libgcc
+    pkgs.go
+    pkgs.ripgrep
+    pkgs.gnumake
+    pkgs.fzf
+    pkgs.wl-clipboard
+    pkgs.xclip
     pkgs.rar
+    pkgs.unrar
     pkgs.zip
+    pkgs.unzip
     pkgs.p7zip
     pkgs.xarchiver
     pkgs.lf
@@ -103,7 +97,7 @@
     pkgs.mpc-cli
     pkgs.ncmpcpp
     pkgs.plattenalbum
-    # pkgs.ymuse
+    pkgs.ymuse
     pkgs.qbittorrent
     pkgs.logmein-hamachi
     pkgs.haguichi
@@ -114,7 +108,8 @@
     pkgs.typioca
     pkgs.mapscii
     pkgs.pywal
-    pkgs.dmenu-rs
+    pkgs.dmenu
+    pkgs.polybar
     pkgs.swww
     pkgs.eww
     pkgs.papirus-icon-theme
@@ -123,7 +118,7 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "BlexMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
