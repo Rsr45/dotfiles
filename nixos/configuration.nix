@@ -1,3 +1,6 @@
+{config, pkgs, ... }:
+
+{
 
   services.xserver.enable = true;
   services.xserver.autorun = true;
@@ -126,3 +129,5 @@
     noto-fonts-emoji
     liberation_ttf
   ];
+
+}
